@@ -1,0 +1,19 @@
+<div class="">
+  <h1 class="flex justify-center text-3xl text-white">{{title}}</h1>
+  <swiper-container
+    space-between="30"
+    slides-per-view="auto"
+    effect="cube"
+    grab-cursor="true"
+    cube-effect-shadow="true"
+    cube-effect-slide-shadows="true"
+    cube-effect-shadow-offset="20"
+    cube-effect-shadow-scale="0.94">
+
+    @for (movie of movies; track $index) {
+      <swiper-slide class="h-full w-full">
+        <app-movie-card [movie]="movie"></app-movie-card>
+      </swiper-slide>
+    }
+  </swiper-container>
+</div>

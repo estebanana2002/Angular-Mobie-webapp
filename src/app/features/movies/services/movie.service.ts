@@ -9,11 +9,20 @@ import { Observable } from 'rxjs';
 })
 export class MovieService {
   private url = environment.apiUrl;
+  private image_url = environment.image_url;
   constructor(
     private http: HttpClient
   ) { }
 
   public getMovies(): Observable<MovieResponse> {
     return this.http.get<MovieResponse>(`${this.url}/movie/popular`);
+  }
+
+  public getRatedMovies() {
+    return this.http.get<MovieResponse>(`${this.url}/movie/top_rated`);
+  }
+
+  public getImage(resolution: string, path: string) {
+    return `${this.image_url}/${resolution}/${path}`;
   }
 }

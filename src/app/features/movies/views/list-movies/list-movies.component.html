@@ -1,3 +1,53 @@
-<div class="py-14 px-2">
-  <p>list-movies works!</p>
+<div class="py-24 px-2">
+  <div class="w-full h-12 mb-12 flex justify-center items-center backdrop-blur-lg">
+    <div class="relative w-full h-full flex items-center">
+      <!-- Search Icon -->
+      <span class="absolute inset-y-0 left-0 flex items-center pl-4">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-6 w-6 text-gray-400"
+          fill="none" viewBox="0 0 24 24"
+          stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round"
+                d="M11 4a7 7 0 100 14 7 7 0 000-14zM21 21l-4.35-4.35" />
+        </svg>
+      </span>
+
+      <!-- Input Field -->
+      <input
+        type="text"
+        placeholder="Buscar"
+        class="w-full h-full pl-12 pr-4 bg-white/80 rounded-l border border-gray-300
+        focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-gray-700
+        outline-none text-base transition-colors duration-200 ease-in-out"
+      />
+
+      <!-- Search Button -->
+      <button
+        class="h-full bg-indigo-500 text-white rounded-r px-4 flex items-center justify-center
+        hover:bg-indigo-600 transition duration-200 ease-in-out"
+      >
+        Buscar
+      </button>
+    </div>
+  </div>
+
+
+  <app-movie-carrousel [movies]="movies" title="Populares" />
+  <!-- Grid Layout for Movie List -->
+  <div class="mt-12">
+    <h1 class="text-3xl font-bold text-white mb-6 text-center rounded-lg p-5">
+      Most Rated
+    </h1>
+
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+      @for (movie of ratedMovies; track $index) {
+        <div class="bg-white rounded-lg shadow-md p-4">
+          <img [src]="getPosterUrl(movie.backdrop_path)" alt="{{movie.title}}" class="w-full h-auto rounded-t-lg">
+          <h2 class="text-lg font-semibold mt-2">{{movie.title}}</h2>
+          <p class="text-gray-600">{{movie.overview | slice:0:50}}...</p>
+        </div>
+      }
+    </div>
+  </div>
 </div>

@@ -1,0 +1,21 @@
+swiper-slide {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+app-movie-card {
+  height: 100%;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  app-movie-card {
+    width: 50%;
+  }
+}
+
+.p-4 {
+  padding: 0;
+}

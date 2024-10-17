@@ -1,10 +1,18 @@
-<nav class="bg-white shadow-md fixed w-full z-10">
+<nav class="fixed w-full z-10 backdrop-blur-lg h-24 flex justify-center">
     <div class="container mx-auto px-4 py-2 flex justify-between items-center">
-        <div class="logo text-xl font-bold">
-            <a routerLink="/">CineReviews</a>
+
+        <!-- Centered Title for Mobile -->
+        <div class="block md:hidden flex-1 text-center">
+            <h1 class="text-xl font-bold text-white">Pelis Chingonas</h1>
         </div>
 
-        <div class="menu hidden md:flex space-x-6">
+        <!-- Right Logo -->
+        <div class="hidden md:block text-xl font-bold text-white">
+            <a routerLink="/">Pelis Chingonas</a>
+        </div>
+
+
+        <div class="menu hidden md:flex space-x-6 text-white">
             <a routerLink="/movies/home" routerLinkActive="text-blue-500" class="hover:text-blue-500">Inicio</a>
             <a routerLink="/movies/movies-list" routerLinkActive="text-blue-500" class="hover:text-blue-500 cursor-pointer">Películas</a>
             <a routerLink="/reviews" routerLinkActive="text-blue-500" class="hover:text-blue-500">Reseñas</a>
@@ -23,7 +31,7 @@
 </section>
 
 <!-- Tab bar para dispositivos móviles -->
-<div class="tabs-container md:hidden fixed bottom-0 w-full bg-white shadow-lg flex justify-around">
+<div class="tabs-container md:hidden fixed bottom-0 w-full bg-white shadow-lg flex justify-around z-50">
   <button
     routerLink="/movies/home" routerLinkActive="text-blue-500"
       class="tab-item flex flex-col items-center justify-center p-4 space-y-1">

@@ -1,0 +1,12 @@
+@if (searchedMovies.length == 0) {
+  <app-not-found></app-not-found>
+} @else {
+  <div class="mt-20 mb-20 p-5">
+    <h1 class="text-3xl text-white">Resultados para: {{search}}</h1>
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+      @for (movie of searchedMovies; track $index) {
+        <app-movie-card [movie]="movie"></app-movie-card>
+      }
+    </div>
+  </div>
+}

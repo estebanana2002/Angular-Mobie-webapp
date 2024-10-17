@@ -15,11 +15,15 @@ export class MovieService {
   ) { }
 
   public getMovies(): Observable<MovieResponse> {
-    return this.http.get<MovieResponse>(`${this.url}/movie/popular`);
+    return this.http.get<MovieResponse>(`${this.url}movie/popular`);
   }
 
   public getRatedMovies() {
-    return this.http.get<MovieResponse>(`${this.url}/movie/top_rated`);
+    return this.http.get<MovieResponse>(`${this.url}movie/top_rated`);
+  }
+
+  public searchMovie(query: string) {
+    return this.http.get<any>(`${this.url}search/movie?&query=${query}`);
   }
 
   public getImage(resolution: string, path: string) {

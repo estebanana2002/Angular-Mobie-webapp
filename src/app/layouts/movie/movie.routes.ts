@@ -14,6 +14,10 @@ export const movies_routes: Routes = [
         loadComponent: () => import('../../features/movies/views/list-movies/list-movies.component').then(m => m.ListMoviesComponent)
       },
       {
+        path: 'movie-search/:search',
+        loadComponent: () => import('../../features/movies/views/search/search.component').then(m => m.SearchComponent)
+      },
+      {
           path: '**',
           redirectTo: 'home',
       }
